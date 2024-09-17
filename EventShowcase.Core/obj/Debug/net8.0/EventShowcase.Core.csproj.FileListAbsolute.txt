@@ -1,0 +1,12 @@
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.AssemblyInfoInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.AssemblyInfo.cs
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.csproj.CoreCompileInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\bin\Debug\net8.0\EventShowcase.Core.deps.json
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\bin\Debug\net8.0\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\bin\Debug\net8.0\EventShowcase.Core.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\refint\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\ref\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.csproj.AssemblyReference.cache

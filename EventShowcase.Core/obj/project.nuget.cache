@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UK9uPIrR+xwPcO36SoWYAQAbPBb+SERH0v6WJjSA1dhz1wdsTw6i0zuN+71IDpmq5lB+9O3ElyNUQrfdIdD/+w==",
+  "success": true,
+  "projectFilePath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

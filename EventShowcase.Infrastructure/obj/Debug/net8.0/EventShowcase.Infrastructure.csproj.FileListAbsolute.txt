@@ -1,0 +1,17 @@
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Infrastructure.deps.json
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Infrastructure.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Infrastructure.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.AssemblyInfoInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.AssemblyInfo.cs
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.csproj.CoreCompileInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\refint\EventShowcase.Infrastructure.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\ref\EventShowcase.Infrastructure.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Application.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Application.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventShowcase.Infrastructure.csproj.AssemblyReference.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\obj\Debug\net8.0\EventSho.0C3F3527.Up2Date
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Infrastructure\bin\Debug\net8.0\EventShowcase.Core.pdb

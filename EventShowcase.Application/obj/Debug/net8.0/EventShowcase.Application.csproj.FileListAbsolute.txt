@@ -1,0 +1,15 @@
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Application.deps.json
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Application.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Application.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.AssemblyInfoInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.AssemblyInfo.cs
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.csproj.CoreCompileInputs.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\refint\EventShowcase.Application.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\ref\EventShowcase.Application.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Core.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Core.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.csproj.AssemblyReference.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventSho.81A242BF.Up2Date
