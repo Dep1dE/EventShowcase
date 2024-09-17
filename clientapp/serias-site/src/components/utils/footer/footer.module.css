@@ -1,0 +1,83 @@
+.footer__container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--maxWidth);
+    display: flex;
+    flex-direction: column;
+    padding: 10px var(--containerPadding);
+    background-color: #444;
+}
+
+.footer__btn {
+    color: var(--main-white);
+    font-size: var(--medium);
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.footer__logo {
+    width: 50px;
+    height: 50px;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__data {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.teamImg img {
+    height: 55px;
+    width: 55px;
+}
+
+.Icon {
+    font-size: 3rem;
+    color: #D3D3D3;
+    margin-left: 15px;
+    display: block;
+    transition-duration: .3s;
+}
+
+.Icon:hover {
+  color: var(--main-yellow);
+}
+
+.Contact {
+    font-size: 3rem;
+}
+
+.contact_item {
+    font-size: 10rem;
+}
+
+.footer__links {
+    margin-right: 0;
+}
+
+@media (max-width: 600px) {
+    .footer__btn {
+        font-size: var(--small);
+        padding-bottom: 2px;
+    }
+
+    .teamImg img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .Icon {
+        font-size: 2rem;
+
+    }
+
+    .Contact {
+        font-size: 2rem;
+    }
+}

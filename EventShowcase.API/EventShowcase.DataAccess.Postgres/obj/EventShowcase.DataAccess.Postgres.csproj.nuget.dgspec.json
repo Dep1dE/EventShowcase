@@ -1,0 +1,337 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\EventShowcase.DataAccess.Postgres.csproj": {}
+  },
+  "projects": {
+    "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\EventShowcase.DataAccess.Postgres.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\EventShowcase.DataAccess.Postgres.csproj",
+        "projectName": "EventShowcase.DataAccess.Postgres",
+        "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\EventShowcase.DataAccess.Postgres.csproj",
+        "packagesPath": "C:\\Users\\vlads\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vlads\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj"
+              },
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj"
+              },
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\EventShowcase.Infrastructure.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\EventShowcase.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj",
+        "projectName": "EventShowcase.Application",
+        "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj",
+        "packagesPath": "C:\\Users\\vlads\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vlads\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj",
+        "projectName": "EventShowcase.Core",
+        "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj",
+        "packagesPath": "C:\\Users\\vlads\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vlads\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\EventShowcase.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\EventShowcase.Infrastructure.csproj",
+        "projectName": "EventShowcase.Infrastructure",
+        "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\EventShowcase.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\vlads\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vlads\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj"
+              },
+              "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj": {
+                "projectPath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Core\\EventShowcase.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

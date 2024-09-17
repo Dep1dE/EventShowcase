@@ -1,0 +1,87 @@
+name: dockercompose16488837488549212795
+services:
+  adminer:
+    image: adminer
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+    restart: always
+  db:
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+    image: postgres:latest
+    networks:
+      default: null
+    restart: always
+    volumes:
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+        volume: {}
+  eventshowcase.api:
+    build:
+      context: D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API
+      dockerfile: EventShowcase.API/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: eventshowcaseapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5000"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\vlads\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\vlads\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  frontend:
+    build:
+      context: D:\WorkTable\information\Projects\1\EventShowcase\serials-site
+      dockerfile: Dockerfile
+    depends_on:
+      eventshowcase.api:
+        condition: service_started
+        required: true
+    environment:
+      REACT_APP_API_URL: http://localhost:5000
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "3000"
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose16488837488549212795_default
+volumes:
+  postgres-data:
+    name: dockercompose16488837488549212795_postgres-data
