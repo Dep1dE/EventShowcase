@@ -14,10 +14,12 @@ namespace EventShowcase.Infrastructure
         public JwtOptions(IConfiguration config)
         {
             SecretKey = config["JwtOptions:SecretKey"]!;
-            ExpireHours = Convert.ToInt32(config["JwtOptions:ExpiresHours"]!);
+            ExpireHoursAccess = Convert.ToInt32(config["JwtOptions:ExpiresHoursAccess"]!);
+            ExpireHoursRefresh = Convert.ToInt32(config["JwtOptions:ExpiresHoursRefresh"]!);
         }
         public string SecretKey { get; set; } = string.Empty;
-        public int ExpireHours { get; set; } //Minutes
+        public int ExpireHoursAccess { get; set; } //Minutes
+        public int ExpireHoursRefresh { get; set; } //Minutes
     }
 }
 

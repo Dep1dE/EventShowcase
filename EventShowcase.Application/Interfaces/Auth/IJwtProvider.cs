@@ -12,6 +12,8 @@ namespace EventShowcase.Application.Interfaces.Auth
     public interface IJwtProvider
     {
         public string GenerateAccessToken(User user);
-        public Guid GetUserIdFromToken(IRequestCookieCollection cookies);
+        public Guid GetUserIdFromToken(string token);
+        string GenerateRefreshToken(User user);
+        string RefreshAccessToken(string refreshToken);
     }
 }

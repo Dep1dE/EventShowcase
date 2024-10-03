@@ -29,6 +29,10 @@ services:
         com.microsoft.visual-studio.project-name: EventShowcase.API
       target: base
     container_name: EventShowcase.API
+    depends_on:
+      db:
+        condition: service_started
+        required: true
     entrypoint:
       - tail
       - -f
@@ -49,6 +53,14 @@ services:
     networks:
       default: null
     ports:
+      - mode: ingress
+        target: 8080
+        published: "5000"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "5001"
+        protocol: tcp
       - mode: ingress
         target: 8080
         protocol: tcp
@@ -126,6 +138,21 @@ services:
         read_only: true
         bind:
           create_host_path: true
+  frontend:
+    depends_on:
+      eventshowcase.api:
+        condition: service_started
+        required: true
+    environment:
+      REACT_APP_API_URL: http://localhost:5000
+    image: front
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
 networks:
   default:
     name: dockercompose16488837488549212795_default

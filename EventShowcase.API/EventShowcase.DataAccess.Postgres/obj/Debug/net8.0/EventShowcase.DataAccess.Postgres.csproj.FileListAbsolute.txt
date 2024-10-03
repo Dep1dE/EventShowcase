@@ -17,3 +17,4 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcas
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.DataAccess.Postgres\bin\Debug\net8.0\EventShowcase.Application.pdb
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.DataAccess.Postgres\bin\Debug\net8.0\EventShowcase.Infrastructure.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.DataAccess.Postgres\bin\Debug\net8.0\EventShowcase.Infrastructure.pdb
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.DataAccess.Postgres\obj\Debug\net8.0\EventShowcase.DataAccess.Postgres.sourcelink.json

@@ -1,10 +1,13 @@
-using EventShowcase.API.Endpoints;
+using EventShowcase.API.Contracts.Image.Responses;
+//using EventShowcase.API.Endpoints;
 using EventShowcase.API.Extensions;
 using EventShowcase.Application.Interfaces.Auth;
 using EventShowcase.Application.Interfaces.Repositories;
+using EventShowcase.Application.Interfaces.Services;
 using EventShowcase.Application.Services;
+using EventShowcase.Core.Enums;
 using EventShowcase.Core.Models;
-using EventShowcase.Core.Validators;
+using EventShowcase.Core.Validators.Create;
 using EventShowcase.DataAccess.Postgres;
 using EventShowcase.DataAccess.Postgres.Repositories;
 using EventShowcase.Infrastructure;
@@ -12,18 +15,23 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
-
+builder.Services.AddHttpContextAccessor();
 // Add services to the container.
 builder.Services.AddApiAuthentication(configuration);
 builder.Services.AddControllers();
-builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<EventValidator>();
-builder.Services.AddValidatorsFromAssembly(typeof(UserValidator).Assembly);
-builder.Services.AddValidatorsFromAssembly(typeof(EventValidator).Assembly);
+builder.Services.AddMediatR(configuration =>
+{
+    configuration.RegisterServicesFromAssembly(typeof(ImageResponse).Assembly);
+});
+builder.Services.AddValidatorsFromAssemblyContaining<UserCreateValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<EventCreateValidator>();
+builder.Services.AddValidatorsFromAssembly(typeof(UserCreateValidator).Assembly);
+builder.Services.AddValidatorsFromAssembly(typeof(EventCreateValidator).Assembly);
 
 
 
@@ -55,10 +63,24 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<EventShowcase.DataAccess.Postgres.AuthorizationOptions>();
 builder.Services.AddScoped<Microsoft.AspNetCore.Authorization.AuthorizationOptions>();
-builder.Services.AddScoped<IValidator<User>, UserValidator>();
-builder.Services.AddScoped<IValidator<Event>, EventValidator>();
-builder.Services.AddScoped<UsersService>();
-builder.Services.AddScoped<EventsService>();
+builder.Services.AddScoped<IValidator<User>, UserCreateValidator>();
+builder.Services.AddScoped<IValidator<Event>, EventCreateValidator>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+//builder.Services.AddScoped<EventsService>();
+builder.Services.AddTransient<IUsersService, UsersService>(); 
+builder.Services.AddTransient<UsersService>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ReadPolicy", policy =>
+        policy.RequirePermissions(UserPermissions.Read));
+    options.AddPolicy("CreatePolicy", policy =>
+        policy.RequirePermissions(UserPermissions.Create));
+    options.AddPolicy("UpdatePolicy", policy =>
+        policy.RequirePermissions(UserPermissions.Update));
+    options.AddPolicy("DeletePolicy", policy =>
+        policy.RequirePermissions(UserPermissions.Delete));
+});
 
 
 builder.Services.Configure<JwtOptions>(configuration.GetSection(nameof(JwtOptions)));
@@ -68,9 +90,9 @@ builder.Services.Configure<EventShowcase.DataAccess.Postgres.AuthorizationOption
 var app = builder.Build();
 
 app.UseCors("AllowSpecificOrigin");
-app.MapUsersEndpoints();
-app.MapEventsEndpoints();
-// Configure the HTTP request pipeline.
+//app.MapUsersEndpoints();
+//app.MapEventsEndpoints();
+//Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -90,6 +112,8 @@ app.UseCookiePolicy(new CookiePolicyOptions
     HttpOnly = HttpOnlyPolicy.Always,
     Secure = CookieSecurePolicy.Always
 });
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthentication();
 

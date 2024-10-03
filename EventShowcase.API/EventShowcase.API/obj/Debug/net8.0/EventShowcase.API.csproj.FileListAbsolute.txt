@@ -122,3 +122,6 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcas
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\FluentValidation.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\MediatR.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\obj\Debug\net8.0\EventShowcase.API.sourcelink.json

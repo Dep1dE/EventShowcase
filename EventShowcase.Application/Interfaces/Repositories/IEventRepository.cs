@@ -30,28 +30,12 @@ namespace EventShowcase.Application.Interfaces.Repositories
 
         Task<List<Event>> GetByPageAsync(int page, int pageSize);
 
-        Task AddEventAsync(
-            string title,
-            string description,
-            DateTime date,
-            string location,
-            string category,
-            int maxUserCount,
-            List<Image> images
-        );
+        Task<Guid> AddEventAsync(Event eventEntity);
 
-        Task AddEventImageAsync(Guid id, string link);
+        Task AddEventImageAsync(Guid eventId, Image newImage);
 
-        Task UpdateEventAsync(
-            Guid id,
-            string title,
-            string description,
-            DateTime date,
-            string location,
-            string category,
-            int maxUserCount
-        );
+        Task UpdateEventAsync(Event eventEntity);
 
-        Task DeleteEventAsync(Guid id);
+        Task DeleteEventAsync(Event @event);
     }
 }

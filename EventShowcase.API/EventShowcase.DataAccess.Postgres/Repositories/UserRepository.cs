@@ -63,17 +63,8 @@ namespace EventShowcase.DataAccess.Postgres.Repositories
                 user.IsAdmin = true;
             }
 
-            var validate = _validator.Validate(user);
-            if (validate.IsValid)
-            {
-                await _dbContext.Users.AddAsync(user);
-                await _dbContext.SaveChangesAsync();
-            }
-            else
-            {
-                throw new ValidationException(validate.Errors);
-            }
-            
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<User> GetUserByEmailAsync(string email)
@@ -85,7 +76,7 @@ namespace EventShowcase.DataAccess.Postgres.Repositories
         {
             var Event = await _dbContext
                 .Events.AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == idEvent) ?? throw new Exception("Пользователи не найдены");
+                .Include(u => u.Users).FirstOrDefaultAsync(x => x.Id == idEvent) ?? throw new Exception("Пользователи не найдены");
             return Event.Users;
         }
 

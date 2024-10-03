@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -95,82 +96,33 @@ namespace EventShowcase.DataAccess.Postgres.Repositories
                 .ToListAsync();
         }
 
-        public async Task AddEventAsync(
-            string title,
-            string description,
-            DateTime date,
-            string location,
-            string category,
-            int maxUserCount,
-            List<Image> images
-        )
+        public async Task<Guid> AddEventAsync(Event eventEntity)
         {
-            var eventEntity = new Event
-            {
-                Id = Guid.NewGuid(),
-                Title = title,
-                Description = description,
-                Date = date,
-                Location = location,
-                Category = category,
-                MaxUserCount = maxUserCount,
-                Images = images,
-            };
-
-            var validate = _validator.Validate(eventEntity);
-
-            if (validate.IsValid)
-            {
-                await _dbContext.Events.AddAsync(eventEntity);
-                await _dbContext.SaveChangesAsync();
-            }
-            else
-            {
-                throw new ValidationException(validate.Errors);
-            }
+            await _dbContext.Events.AddAsync(eventEntity);
+            await _dbContext.SaveChangesAsync();
+            return eventEntity.Id;
         }
 
-        public async Task AddEventImageAsync(Guid eventId, string link)
+        public async Task AddEventImageAsync(Guid eventId,Image newImage)
         {
             var @event = await _dbContext.Events.FirstOrDefaultAsync(x => x.Id == eventId)
-                  ?? throw new Exception("Событие не найдено");
+                ?? throw new Exception("Событие не найдено");
 
-            var newimage = new Image
-            {
-                Id = Guid.NewGuid(),
-                Link = link,
-                EventId = eventId,
-            };
-
-            await _dbContext.AddAsync(newimage);
+            await _dbContext.Images.AddAsync(newImage);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateEventAsync(
-            Guid id,
-            string title,
-            string description,
-            DateTime date,
-            string location,
-            string category,
-            int maxUserCount
-        )
+
+        public async Task UpdateEventAsync(Event eventEntity)
         {
-            await _dbContext
-                .Events.Where(x => x.Id == id)
-                .ExecuteUpdateAsync(y =>
-                    y.SetProperty(e => e.Title, title)
-                        .SetProperty(e => e.Description, description)
-                        .SetProperty(e => e.Date, date)
-                        .SetProperty(e => e.Location, location)
-                        .SetProperty(e => e.Category, category)
-                        .SetProperty(e => e.MaxUserCount, maxUserCount)
-                );
+            _dbContext.Update(eventEntity);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteEventAsync(Guid id)
+        public async Task DeleteEventAsync(Event @event)
         {
-            await _dbContext.Events.Where(x => x.Id == id).ExecuteDeleteAsync();
+            _dbContext.Remove(@event);
+            await _dbContext.SaveChangesAsync();
         }
 
     }

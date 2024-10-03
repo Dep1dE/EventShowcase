@@ -10,3 +10,4 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\n
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.pdb
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\ref\EventShowcase.Core.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.csproj.AssemblyReference.cache
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Core\obj\Debug\net8.0\EventShowcase.Core.sourcelink.json

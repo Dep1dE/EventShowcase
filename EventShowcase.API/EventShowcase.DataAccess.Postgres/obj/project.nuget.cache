@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2gnpPFfEVCf+Z3dHLHFnRJXFZ8SkP7gQ7yXRzdl1WqtiGgTI/wRWffUzdfFEwnDpPaxr/vIHBGemWzDiGP939Q==",
+  "dgSpecHash": "ocq2aj4F2bUT1cp59l8pisOilvQGuX/flpDh/u1SSb6U8NaLsvbURn4pCiulSFoVc4AMce2yWjFCnaIcIVwuGQ==",
   "success": true,
   "projectFilePath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.DataAccess.Postgres\\EventShowcase.DataAccess.Postgres.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlads\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

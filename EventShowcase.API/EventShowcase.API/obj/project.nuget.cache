@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hrzpUv6RyK3zsP6vEswQ++26YmqdIVFwXrFVxyrL+ENAwQHCanPZn3k9g9rR8Sb23yYpqEd/siGcnrDXxqz3+A==",
+  "dgSpecHash": "wDrW3VUvOvIkp1u+kBdypYQudiDQPuJXeoN0YH4JJVBmfwa3o7ealawnBZ1NcY08BQ9+ryxMI7uY8AUHUP1aPg==",
   "success": true,
   "projectFilePath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.API\\EventShowcase.API\\EventShowcase.API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

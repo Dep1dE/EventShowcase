@@ -58,5 +58,7 @@ namespace EventShowcase.API.Extensions
                 policy.AddRequirements(new PermissionRequirement(permissions)));
         }
 
+
+
     }
 }

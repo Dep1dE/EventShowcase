@@ -8,7 +8,8 @@ namespace EventShowcase.Application.Interfaces.Auth
 {
     public interface IJwtOptions
     {
-        int ExpireHours { get; set; }
+        int ExpireHoursAccess { get; set; }
+        int ExpireHoursRefresh { get; set; }
         string SecretKey { get; set; }
     }
 }

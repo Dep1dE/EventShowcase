@@ -11,9 +11,8 @@ namespace EventShowcase.Core.Models
     {
         public Guid Id { get; set; }
         public Guid EventId { get; set; }
-        [MaxLength(500)]
-        public string Link { get; set; } = string.Empty;
-
+        public string ImageData { get; set; } = string.Empty;
+        public string ImageType { get; set; } = string.Empty;
         public Event? Event { get; set; }
     }
 }

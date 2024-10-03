@@ -37,3 +37,5 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\Mi
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\Microsoft.IdentityModel.Protocols.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\FluentValidation.DependencyInjectionExtensions.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\FluentValidation.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\MediatR.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\MediatR.Contracts.dll

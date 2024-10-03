@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ZX8hmj789ozpICTgB8NFVNugw15Q5EaGTlbdBdNA9JaHIQXFI3zVwfYm7/BA7Xzu0JcWU7ROT13SvsCg+mRCSA==",
+  "dgSpecHash": "5yOJOdxkCcM68z6V6Z84qyAYy2nfpp13KecKJeHe9nnCXqGQqlyu3+pyJOIRv9v2EWKHoCZ7nvMmmhSRmK+r0g==",
   "success": true,
   "projectFilePath": "D:\\WorkTable\\information\\Projects\\1\\EventShowcase\\EventShowcase.Application\\EventShowcase.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.2\\fluentvalidation.dependencyinjectionextensions.11.9.2.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
-    "C:\\Users\\vlads\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\vlads\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\vlads\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",

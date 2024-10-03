@@ -13,3 +13,4 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\bin\Debug\net8.0\EventShowcase.Core.pdb
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.csproj.AssemblyReference.cache
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventSho.81A242BF.Up2Date
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.Application\obj\Debug\net8.0\EventShowcase.Application.sourcelink.json
