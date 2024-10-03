@@ -14,7 +14,7 @@ function Myevents(props) {
 
     let getEvents = async () => {
         try {
-            const data = await EventAPI.GetMyEvents(props.user.idUser)
+            const data = await EventAPI.GetMyEvents("")
             console.log(data.data)
             setEvents(data.data)
         } catch (error) {

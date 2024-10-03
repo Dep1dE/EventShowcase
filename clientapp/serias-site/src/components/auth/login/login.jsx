@@ -45,7 +45,7 @@ const Login = (props) => {
                 let userData = user.data
                 console.log(userData)
                 let isAdmin = userData.isAdmin ? true : false
-                props.setUser({ isAuth: true, id: 0, email: username, isAdmin: userData.isAdmin})
+                props.setUser({ isAuth: true, id: 0, email: username, isAdmin: userData.isAdmin}) //isAdmin: userData.isAdmin
 
                 navigate("/homepage");
             } 

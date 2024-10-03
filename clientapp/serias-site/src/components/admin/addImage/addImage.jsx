@@ -26,40 +26,58 @@ const useStyles = makeStyles((theme) => ({
 const AddImage = (props) => {
     const { id } = useParams();
     const classes = useStyles();
-    const [Link, setLink] = useState('');
-    
-
-    
-
+    const [file, setFile] = useState(null);
     const [err, setErr] = useState('');
 
     let navigate = useNavigate()
 
+    const handleFileChange = (event) => {
+        setFile(event.target.files[0]);
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        
-        try {
-            console.log(id)
-            const data = await EventAPI.AddImage(id,Link);
-            navigate("/events");
-        } catch (error) {
-            if (error.response) {
-                setErr("Поле не может быть пустым")
-            }
+        if (!file) {
+            setErr("Пожалуйста, выберите файл");
+            return;
         }
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = async () => {
+            const base64String = reader.result.split(',')[1];
+            try {
+                const data = {
+                    IdEvent: id,
+                    ImageData: base64String,  
+                    ImageType: file.type
+                };
+
+                console.log(data.IdEvent, data.ImageData, data.ImageType);
+                await EventAPI.AddImage(id, data.ImageData, data.ImageType);
+                navigate("/events");
+            } catch (error) {
+                if (error.response) {
+                    setErr("Произошла ошибка при загрузке изображения");
+                }
+            }
+        };
+
+        reader.onerror = () => {
+            setErr("Ошибка при чтении файла.");
+        };
     };
+
 
     return (
         <div className={s.container}>
-            <h2 className={s.LoginLabel}>Добавьте ссылку на картинку</h2>
+            <h2 className={s.LoginLabel}>Добавьте изображение</h2>
             <form onSubmit={handleSubmit}>
                 <div className={classes.formGroup}>
-                    <TextField
-                        label="Ссылка"
-                        variant="outlined"
-                        value={Link}
-                        onChange={(e) => setLink(e.target.value)}
+                     <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
                     />
                 </div>
 

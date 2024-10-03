@@ -68,7 +68,7 @@ function Event(props) {
     }
     const handleSubscribe = async () => {
       try {
-        const data = await EventAPI.RegisterToEvent(id)
+        const data = await EventAPI.RegisterToEvent(id, "")
         navigate('/events');
         }
      catch (error) {
@@ -146,7 +146,7 @@ function Event(props) {
                         <div className={s.container}>
                             {images.length > 0 ? (
                             images.map((image) => (
-                                <p><img src={image.link} alt="" style={{ width: '400px', height: 'auto' }} /></p>
+                                <p><img src={`data:${image.imageType};base64,${image.imageData}`} alt="" style={{ width: '400px', height: 'auto' }} /></p>
                             ))
                             ) : (
                             <p>Нету изображений к этому мероприятию</p>

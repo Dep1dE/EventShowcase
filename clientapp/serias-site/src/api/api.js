@@ -47,12 +47,12 @@ export const EventAPI = {
         return instance.get('get_all_events/')
     },
 
-    GetMyEvents(idUser) {
-        return instance.get('get_my_events/', {idUser})
+    GetMyEvents(token) {
+        return instance.get('get_my_events/', {token})
     },
 
-    RegisterToEvent(idEvent) {
-        return instance.post('register_user_to_event/', {idEvent})
+    RegisterToEvent(idEvent, token) {
+        return instance.post('register_user_to_event/', {idEvent, token})
     },
     Unsubscribe(idUser, idEvent) {
         return instance.post('delete_user_in_event/', {idUser, idEvent})
@@ -63,8 +63,8 @@ export const EventAPI = {
     UpdateEvent(Id, Title, Description, Date, Location, Category, maxUserCount) {
         return instance.post('update_event/', {Id,Title, Description, Date, Location, Category, maxUserCount})
     },
-    AddImage(idEvent, Link) {
-        return instance.post('add_image/', {idEvent, Link})
+    AddImage(IdEvent, ImageData, ImageType) {
+        return instance.post('add_image/', {IdEvent, ImageData, ImageType})
     },
     DeleteEvent(idEvent) {
         return instance.post('delete_event/', {idEvent})
