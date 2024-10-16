@@ -1,18 +1,15 @@
 ﻿using EventShowcase.API.Contracts.Users.Requests;
 using EventShowcase.API.Contracts.Users.Responses;
+using EventShowcase.Application.Exeptions;
 using EventShowcase.Application.Interfaces.Auth;
 using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Infrastructure;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Login
 {
-    public class LoginUserHandler : IRequestHandler<LoginUserRequest, List<string>>
+    public class LoginUserHandler : IRequestHandler<LoginUserRequest, (string, string)>
     {
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
@@ -25,9 +22,10 @@ namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Login
             _jwtProvider = jwtProvider;
         }
 
-        public async Task<List<string>> Handle(LoginUserRequest request, CancellationToken cancellationToken)
+        public async Task<(string, string)> Handle(LoginUserRequest request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            var user = await _userRepository.GetUserByEmailAsync(request.Email)
+                ?? throw new EntityNotFoundExeption("Entity not found");
 
             if (user == null || !_passwordHasher.Verify(request.Password, user.PasswordHash))
             {
@@ -36,10 +34,7 @@ namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Login
 
             var accessToken = _jwtProvider.GenerateAccessToken(user);
             var refreshToken = _jwtProvider.GenerateRefreshToken(user);
-            List<string> tokens = new List<string>();
-            tokens.Add(accessToken);
-            tokens.Add(refreshToken);
-            return tokens;
+            return (accessToken, refreshToken);
         }
     }
 }

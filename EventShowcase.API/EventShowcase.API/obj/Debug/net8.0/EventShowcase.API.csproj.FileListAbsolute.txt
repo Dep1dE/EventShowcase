@@ -125,3 +125,10 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcas
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\MediatR.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\MediatR.Contracts.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\obj\Debug\net8.0\EventShowcase.API.sourcelink.json
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\AutoMapper.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\FluentValidation.Extensions.AutoMapper.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Endpoints.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\SharpGrip.FluentValidation.AutoValidation.Shared.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\Stef.Validation.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\EventShowcase.API\bin\Debug\net8.0\Newtonsoft.Json.dll

@@ -1,15 +1,12 @@
-﻿using EventShowcase.API.Contracts.Users.Requests;
+﻿using AutoMapper;
+using EventShowcase.API.Contracts.Users.Requests;
 using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Core.Models;
 using EventShowcase.Core.Validators.Create;
 using EventShowcase.Infrastructure;
 using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Register
 {
@@ -17,39 +14,24 @@ namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Register
     {
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
-        private readonly UserCreateValidator _validator;
+        private readonly IMapper _mapper;
 
 
-        public RegisterUserHandler(IUserRepository userRepository, IPasswordHasher passwordHasher, UserCreateValidator validator)
+        public RegisterUserHandler(IUserRepository userRepository, IPasswordHasher passwordHasher, IMapper mapper)
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-            _validator = validator;
+            _mapper = mapper;
         }
 
         public async Task<Unit> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
         {
-            var hashedPassword = _passwordHasher.Generate(request.Password);
+            var userEntity = _mapper.Map<User>(request);
+            userEntity.PasswordHash = _passwordHasher.Generate(request.Password);
 
-            var user = new User
-            {
-                Id = Guid.NewGuid(),
-                Name = request.UserName,
-                Email = request.Email,
-                PasswordHash = hashedPassword
-            };
+            await _userRepository.AddAsync(userEntity);
 
-
-            var validate = _validator.Validate(user);
-            if (validate.IsValid)
-            {
-                await _userRepository.AddUserAsync(user);
-                return Unit.Value;
-            }
-            else
-            {
-                throw new ValidationException(validate.Errors);
-            }
+            return Unit.Value;
         }
     }
 }

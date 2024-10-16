@@ -3,7 +3,7 @@ version: '3.4'
 services:
   eventshowcase.api:
     image: eventshowcaseapi:dev
-    container_name: "EventShowcase.API"
+    container_name: "EventShowcase.API_1"
     build:
       args:
         BUILD_CONFIGURATION: Debug

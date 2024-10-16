@@ -4,5 +4,5 @@ using Microsoft.AspNetCore.Http;
 
 namespace EventShowcase.API.Contracts.Users
 {
-    public record RegisterUserToEventRequest(Guid IdEvent, string Token) : IRequest<Unit>;
+    public record RegisterUserToEventRequest(Guid IdEvent, string? TokensString) : IRequest<Unit>;
 }

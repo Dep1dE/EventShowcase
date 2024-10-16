@@ -39,3 +39,6 @@ D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\Fl
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\FluentValidation.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\MediatR.dll
 D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\MediatR.Contracts.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\AutoMapper.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\FluentValidation.AspNetCore.dll
+D:\WorkTable\information\Projects\1\EventShowcase\EventShowcase.API\bin\Debug\Newtonsoft.Json.dll

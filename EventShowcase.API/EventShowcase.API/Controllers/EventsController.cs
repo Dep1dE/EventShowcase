@@ -33,9 +33,6 @@ namespace EventShowcase.API.Controllers
         public async Task<IActionResult> GetEventById([FromBody] GetEventByIdRequest request)
         {
             var response = await _mediator.Send(request);
-            if (response == null)
-                return NotFound("Событие не найдено");
-
             return Ok(response);
         }
 

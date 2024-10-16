@@ -10,6 +10,6 @@ namespace EventShowcase.Application.Interfaces.Services
 {
     public interface IUsersService
     {
-        Task<User> Auth(string token);
+        Task<User?> Auth(string token);
     }
 }

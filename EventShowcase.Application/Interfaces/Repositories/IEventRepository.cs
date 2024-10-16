@@ -7,35 +7,18 @@ using System.Threading.Tasks;
 
 namespace EventShowcase.Application.Interfaces.Repositories
 {
-    public interface IEventRepository
+    public interface IEventRepository : IBaseRepository<Event>
     {
-        Task<List<Event>> GetEventsAsync();
-
         Task<List<Event>> GetEventsWithUsersAsync();
-
-        Task<Event> GetEventByIdAsync(Guid id);
-
-        Task<Event> GetEventsByTitleAsync(string title);
-        Task<Event> GetEventsByDateAsync(DateTime date);
-
+        Task<Event?> GetEventsByTitleAsync(string title);
+        Task<Event?> GetEventsByDateAsync(DateTime date);
         Task<List<Event>> GetEventsSortedByCategoryAsync();
-
         Task<List<Event>> GetEventsSortedByLocationAsync();
-
-        Task<List<Event>> GetEventsByFilterAsyncAsync(
+        Task<List<Event>> GetEventsByFilterAsync(
             DateTime date,
             string location,
             string category
         );
-
         Task<List<Event>> GetByPageAsync(int page, int pageSize);
-
-        Task<Guid> AddEventAsync(Event eventEntity);
-
-        Task AddEventImageAsync(Guid eventId, Image newImage);
-
-        Task UpdateEventAsync(Event eventEntity);
-
-        Task DeleteEventAsync(Event @event);
     }
 }

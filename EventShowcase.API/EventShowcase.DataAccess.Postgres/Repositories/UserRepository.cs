@@ -1,82 +1,51 @@
 ﻿using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Core.Enums;
 using EventShowcase.Core.Models;
-using EventShowcase.Core.Validators;
 using EventShowcase.Infrastructure;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventShowcase.DataAccess.Postgres.Repositories
 {
-    public class UserRepository: IUserRepository
+    public class UserRepository: BaseRepository<User>, IUserRepository
     {
-        private readonly EventShowcaseDbContext _dbContext;
-        private readonly IValidator<User> _validator;
         private readonly PasswordHasher checkPassword = new PasswordHasher();
-        public UserRepository(EventShowcaseDbContext dbContext, IValidator<User> validator)
-        {
-            _dbContext = dbContext;
-            _validator = validator;
-        }
+        public UserRepository(EventShowcaseDbContext dbContext) : base(dbContext) { }
 
         public async Task RegisterUserToEventAsync(Guid idEvent, Guid idUser)
         {
-            var Event =
-                await _dbContext.Events.FirstOrDefaultAsync(x => x.Id == idEvent)
-                ?? throw new Exception("Событие не найдено");
-            var User = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == idUser)
-                ?? throw new Exception("Пользователь не найден");
+            var Event = await _dbContext.Events.FirstOrDefaultAsync(x => x.Id == idEvent);
+            var User = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == idUser);
 
             Event.Users.Add(User);
 
             await _dbContext.SaveChangesAsync();
         }
-
-        public async Task<User> GetUserByIdAsync(Guid id)
+        public async Task<User?> GetUserWhihtEventsAsync(Guid id)
         {
-            return await _dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id) ?? 
-                throw new Exception("Пользователь не найден");
-
+            return await _dbContext.Users.AsNoTracking().Include(e => e.Events).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<User> GetUserWhihtEventsAsync(Guid id)
-        {
-            return await _dbContext.Users.AsNoTracking().Include(e => e.Events).FirstOrDefaultAsync(x => x.Id == id) ??
-                throw new Exception("Пользователь не найден");
-        }
-
-        public async Task AddUserAsync(User user)
+        public override async Task AddAsync(User user)
         {
             var roleEntity = await _dbContext.Roles.SingleOrDefaultAsync(
                     r => r.Id == (int)UserRoles.User);
-
-            if (user.Name == "admin" && checkPassword.Verify("admin", user.PasswordHash))
-            { 
-                roleEntity = await _dbContext.Roles.SingleOrDefaultAsync(
-                    r => r.Id == (int)UserRoles.Admin); 
-            }
-           
             user.Roles.Add(roleEntity);
-
-            if(roleEntity.Name == "Admin")
-            {
-                user.IsAdmin = true;
-            }
 
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<User> GetUserByEmailAsync(string email)
+        public async Task<User?> GetUserByEmailAsync(string email)
         {
-            return await _dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == email) ?? throw new Exception()    ;
+            return await _dbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<List<User>> GetUsersByEventAsync(Guid idEvent)
         {
             var Event = await _dbContext
                 .Events.AsNoTracking()
-                .Include(u => u.Users).FirstOrDefaultAsync(x => x.Id == idEvent) ?? throw new Exception("Пользователи не найдены");
+                .Include(u => u.Users).FirstOrDefaultAsync(x => x.Id == idEvent);
             return Event.Users;
         }
 
@@ -85,10 +54,9 @@ namespace EventShowcase.DataAccess.Postgres.Repositories
             var eventEntity = await _dbContext
                 .Events
                 .Include(u => u.Users)
-                .FirstOrDefaultAsync(x => x.Id == idEvent) ?? throw new Exception("Событие не найдено");
+                .FirstOrDefaultAsync(x => x.Id == idEvent);
 
-            var userToRemove = eventEntity.Users.FirstOrDefault(x => x.Id == idUser)
-                                ?? throw new Exception("Пользователь не найден");
+            var userToRemove = eventEntity.Users.FirstOrDefault(x => x.Id == idUser);
 
             eventEntity.Users.Remove(userToRemove);
 

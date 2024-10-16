@@ -1,29 +1,30 @@
-﻿using EventShowcase.API.Contracts.Image.Responses;
+﻿using AutoMapper;
+using EventShowcase.API.Contracts.Image.Responses;
 using EventShowcase.Application.Contracts.Images.Requests;
 using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Application.Services;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EventShowcase.Application.UseCases.ImageUseCases.Handlers.Get
 {
     public class GetImagesHandler : IRequestHandler<GetImagesRequest, List<ImageResponse>>
     {
-        private readonly IEventRepository _eventRepository;
+        private readonly IImageRepository _imageRepository;
+        private readonly IMapper _mapper;
 
-        public GetImagesHandler(IEventRepository eventRepository)
+        public GetImagesHandler(IImageRepository imageRepository, IMapper mapper)
         {
-            _eventRepository = eventRepository;
+            _imageRepository = imageRepository;
+            _mapper = mapper;
         }
 
         public async Task<List<ImageResponse>> Handle(GetImagesRequest request, CancellationToken cancellationToken)
         {
-            var @event = await _eventRepository.GetEventByIdAsync(request.IdEvent);
-            return @event.Images.Select(i => new ImageResponse(i.Id, i.EventId, i.ImageData, i.ImageType)).ToList() ;
+            var imagesEntities = await _imageRepository.GetImagesByEventIdAsync(request.IdEvent); 
+            var imagesResponse = _mapper.Map<List<ImageResponse>>(imagesEntities);
+
+            return imagesResponse;
         }
     }
 }

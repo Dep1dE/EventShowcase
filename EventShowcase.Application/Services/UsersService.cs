@@ -29,7 +29,7 @@ namespace EventShowcase.Application.Services
         }
 
 
-        public async Task<User> Auth(string token)
+        public async Task<User?> Auth(string token)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace EventShowcase.Application.Services
 
                 try
                 {
-                    var user = await _userRepository.GetUserByIdAsync(userId);
+                    var user = await _userRepository.GetByIdAsync(userId);
                     return user;
                 }
                 catch (Exception ex)
@@ -57,7 +57,7 @@ namespace EventShowcase.Application.Services
 
                         try
                         {
-                            var user = await _userRepository.GetUserByIdAsync(userId);
+                            var user = await _userRepository.GetByIdAsync(userId);
                             return user;
                         }
                         catch (Exception ex1)

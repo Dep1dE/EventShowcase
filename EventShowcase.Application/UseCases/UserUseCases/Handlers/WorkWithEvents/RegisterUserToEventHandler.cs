@@ -1,8 +1,13 @@
 ﻿using EventShowcase.API.Contracts.Users;
+using EventShowcase.API.Contracts.Users.Responses;
+using EventShowcase.Application.Exeptions;
 using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Application.Interfaces.Services;
+using EventShowcase.Core.Models;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +29,28 @@ namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.WorkWithEvent
 
         public async Task<Unit> Handle(RegisterUserToEventRequest request, CancellationToken cancellationToken)
         {
-            var user = await _usersService.Auth(request.Token);
-            await _userRepository.RegisterUserToEventAsync(request.IdEvent, user.Id);
+            User userEntity;
+            var tokens = JsonConvert.DeserializeObject<MyTokens>(request.TokensString);
+
+            try
+            {
+                userEntity = await _usersService.Auth(tokens.Access)
+                    ?? throw new EntityNotFoundExeption("Entity not found");
+            }
+            catch
+            {
+                try
+                {
+                    userEntity = await _usersService.Auth(tokens.Refresh)
+                        ?? throw new EntityNotFoundExeption("Entity not found");
+                }
+                catch
+                {
+                    throw new Exception("Invalid token");
+                }
+            }
+
+            await _userRepository.RegisterUserToEventAsync(request.IdEvent, userEntity.Id);
             return Unit.Value;
         }
     }

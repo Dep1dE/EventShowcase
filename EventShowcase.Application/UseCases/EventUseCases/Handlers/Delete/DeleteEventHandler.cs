@@ -1,5 +1,7 @@
 ﻿using EventShowcase.API.Contracts.Events.Requests;
+using EventShowcase.Application.Exeptions;
 using EventShowcase.Application.Interfaces.Repositories;
+using EventShowcase.Core.Models;
 using EventShowcase.Core.Validators.Delete;
 using FluentValidation;
 using MediatR;
@@ -14,29 +16,20 @@ namespace EventShowcase.Application.UseCases.EventUseCases.Handlers.Delete
     public class DeleteEventHandler : IRequestHandler<DeleteEventRequest, Unit>
     {
         private readonly IEventRepository _eventRepository;
-        private readonly EventDeleteValidator _validator;
 
 
-        public DeleteEventHandler(IEventRepository eventRepository, EventDeleteValidator validator)
+        public DeleteEventHandler(IEventRepository eventRepository)
         {
             _eventRepository = eventRepository;
-            _validator = validator;
         }
 
         public async Task<Unit> Handle(DeleteEventRequest request, CancellationToken cancellationToken)
         {
-            var @event = await _eventRepository.GetEventByIdAsync(request.idEvent);
+            var eventEntity = await _eventRepository.GetByIdAsync(request.idEvent)
+                ?? throw new EntityNotFoundExeption("Entity not found");
 
-            var validate = _validator.Validate(@event);
+            await _eventRepository.DeleteAsync(eventEntity);
 
-            if (validate.IsValid)
-            {
-                await _eventRepository.DeleteEventAsync(@event);
-            }
-            else
-            {
-                throw new ValidationException(validate.Errors);
-            }
             return Unit.Value;
         }
     }

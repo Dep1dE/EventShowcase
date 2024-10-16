@@ -1,11 +1,7 @@
 ﻿using EventShowcase.API.Contracts.Users.Requests;
 using EventShowcase.Application.Interfaces.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EventShowcase.Application.UseCases.UserUseCases.Handlers.Delete
 {

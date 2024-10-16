@@ -1,4 +1,5 @@
-﻿using EventShowcase.API.Contracts.Events.Requests;
+﻿using AutoMapper;
+using EventShowcase.API.Contracts.Events.Requests;
 using EventShowcase.Application.Interfaces.Repositories;
 using EventShowcase.Core.Models;
 using EventShowcase.Core.Validators.Update;
@@ -15,36 +16,17 @@ namespace EventShowcase.Application.UseCases.EventUseCases.Handlers.Update
     public class UpdateEventHandler : IRequestHandler<UpdateEventRequest, Unit>
     {
         private readonly IEventRepository _eventRepository;
-        private readonly EventUpdateValidator _validator;
-        public UpdateEventHandler(IEventRepository eventRepository, EventUpdateValidator validator)
+        private readonly IMapper _mapper;
+        public UpdateEventHandler(IEventRepository eventRepository, IMapper mapper)
         {
             _eventRepository = eventRepository;
-            _validator = validator;
+            _mapper = mapper;
         }
 
         public async Task<Unit> Handle(UpdateEventRequest request, CancellationToken cancellationToken)
         {
-            var eventEntity = new Event
-            {
-                Id = request.Id,
-                Title = request.Title,
-                Description = request.Description,
-                Date = request.Date,
-                Location = request.Location,
-                Category = request.Category,
-                MaxUserCount = request.MaxUserCount,
-            };
-
-            var validate = _validator.Validate(eventEntity);
-
-            if (validate.IsValid)
-            {
-                await _eventRepository.UpdateEventAsync(eventEntity);
-            }
-            else
-            {
-                throw new ValidationException(validate.Errors);
-            }
+            var eventEntity = _mapper.Map<Event>(request);
+            await _eventRepository.UpdateAsync(eventEntity);
 
             return Unit.Value;
         }

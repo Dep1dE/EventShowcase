@@ -4,5 +4,5 @@ using Microsoft.AspNetCore.Http;
 
 namespace EventShowcase.Application.Contracts.Users.Requests
 {
-    public record AuthRequest(string Token) : IRequest<UserResponse>;
+    public record AuthRequest(string TokensString) : IRequest<UserResponse>;
 }

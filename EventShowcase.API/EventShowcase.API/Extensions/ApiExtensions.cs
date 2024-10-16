@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.Text;
 
 namespace EventShowcase.API.Extensions
@@ -16,7 +17,7 @@ namespace EventShowcase.API.Extensions
     {
         public static void AddApiAuthentication(
             this IServiceCollection services,
-            IConfiguration configuration) //configuration.GetSection(nameof(JwtOptions)).Get<JwtOptions>();
+            IConfiguration configuration) 
         {
             var jwtOptions = configuration.GetSection(nameof(JwtOptions)).Get<JwtOptions>();
 
@@ -37,8 +38,12 @@ namespace EventShowcase.API.Extensions
                     {
                         OnMessageReceived = context =>
                         {
-                            context.Token = context.Request.Cookies["tasty-cookies"];
-
+                            var tokensJson = context.Request.Cookies["tasty-cookies"];
+                            if (tokensJson != null)
+                            {
+                                var tokens = JsonConvert.DeserializeObject<MyTokens>(tokensJson);
+                                context.Token = tokens.Access;
+                            }
                             return Task.CompletedTask;
                         }
                     };

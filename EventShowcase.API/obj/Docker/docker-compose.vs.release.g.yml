@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   eventshowcase.api:
-    container_name: "EventShowcase.API"
+    container_name: "EventShowcase.API_1"
     build:
       args:
         BUILD_CONFIGURATION: Release

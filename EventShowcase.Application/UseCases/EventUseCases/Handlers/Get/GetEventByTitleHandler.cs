@@ -1,8 +1,11 @@
-﻿using EventShowcase.API.Contracts.Events.Requests;
+﻿using AutoMapper;
+using EventShowcase.API.Contracts.Events.Requests;
 using EventShowcase.API.Contracts.Events.Responses;
 using EventShowcase.API.Contracts.Image.Responses;
 using EventShowcase.API.Contracts.Users.Responses;
+using EventShowcase.Application.Exeptions;
 using EventShowcase.Application.Interfaces.Repositories;
+using EventShowcase.Core.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -15,32 +18,21 @@ namespace EventShowcase.Application.UseCases.EventUseCases.Handlers.Get
     public class GetEventByTitleHandler : IRequestHandler<GetEventByTitleRequest, EventResponse>
     {
         private readonly IEventRepository _eventRepository;
+        private readonly IMapper _mapper;
 
-        public GetEventByTitleHandler(IEventRepository eventRepository)
+        public GetEventByTitleHandler(IEventRepository eventRepository, IMapper mapper)
         {
             _eventRepository = eventRepository;
+            _mapper = mapper;
         }
 
         public async Task<EventResponse> Handle(GetEventByTitleRequest request, CancellationToken cancellationToken)
         {
-            var @event = await _eventRepository.GetEventsByTitleAsync(request.Title);
+            var eventEntity = await _eventRepository.GetEventsByTitleAsync(request.Title)
+                ?? throw new EntityNotFoundExeption("Entity not found");
+            var eventResponse = _mapper.Map<EventResponse>(eventEntity);
 
-            return new EventResponse(
-                           @event.Id,
-                           @event.Title,
-                           @event.Description,
-                           @event.Date,
-                           @event.Location,
-                           @event.Category,
-                           @event.MaxUserCount,
-                           @event.Images.Select(
-                                   i => new ImageResponse(
-                                       i.Id,
-                                       i.EventId,
-                                       i.ImageData,
-                                       i.ImageType)).ToList(),
-                               @event.Users.Select(
-                                   u => new UserResponse(u.Id, u.Name, u.Email, u.IsAdmin)).ToList());
+            return eventResponse;
         }
     }
 }

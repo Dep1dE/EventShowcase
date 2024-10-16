@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 
 namespace EventShowcase.Application.Contracts.Users.Requests
 {
-    public record GetMyEventsRequest(string Token) : IRequest<List<EventResponse>>;
+    public record GetMyEventsRequest(string TokensString) : IRequest<List<EventResponse>>;
     
 }
